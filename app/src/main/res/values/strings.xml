@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cantina</string>
+    <string name="lblCodigo">Código</string>
 </resources>
