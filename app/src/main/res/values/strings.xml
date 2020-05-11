@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">Cantina</string>
     <string name="lblCodigo">Código</string>
+    <string name="btnAdd">Add</string>
+    <string name="txv_valor_total">Valor Total:</string>
+    <string name="txv_n_val">0</string>
+    <string name="txv_qtd">Qtd</string>
+    <string name="edtQtd">Quantidade</string>
+    <string name="img_description">Tabela</string>
+
+    <string-array name="codes_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
 </resources>

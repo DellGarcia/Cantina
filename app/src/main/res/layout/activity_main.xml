@@ -8,117 +8,119 @@
     android:backgroundTint="@color/lavender"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:text="@string/btnAdd"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/foodList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txvValor"
+        app:layout_constraintTop_toBottomOf="@+id/edtQtd" />
+
+    <EditText
+        android:id="@+id/edtQtd"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="@string/edtQtd"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lblQtd"
+        app:layout_constraintTop_toBottomOf="@+id/spnCode"
+        android:autofillHints="" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:contentDescription="@string/img_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tabela" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/txvValor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/lblCodigo"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:layout_weight="1"
-                android:text="@string/lblCodigo"
-                android:textSize="22sp" />
-
-            <Spinner
-                android:id="@+id/spnCode"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/lblQtd"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:layout_weight="1"
-                android:text="Qtd"
-                android:textSize="22sp" />
-
-            <Spinner
-                android:id="@+id/spnQtd"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
     <ListView
         android:id="@+id/foodList"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
+
+    <Spinner
+        android:id="@+id/spnCode"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:entries="@array/codes_array"
+        app:layout_constraintBottom_toTopOf="@+id/edtQtd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lblCodigo"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
-        android:id="@+id/txvValor"
-        android:layout_width="wrap_content"
+        android:id="@+id/lblCodigo"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="270dp"
-        android:layout_marginBottom="10dp"
-        android:text="0"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/foodList"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txvLabel" />
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:text="@string/lblCodigo"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/lblQtd"
+        app:layout_constraintEnd_toStartOf="@+id/spnCode"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/txvLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="10dp"
-        android:text="Valor Total:"
-        android:textSize="18sp"
+        android:text="@string/txv_valor_total"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/foodList"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblQtd" />
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/txvValor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="86dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
-        android:text="Button"
+        android:layout_marginStart="20dp"
+        android:text="@string/txv_n_val"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/foodList"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintStart_toEndOf="@+id/txvLabel"
+        app:layout_constraintTop_toBottomOf="@+id/lblQtd" />
+
+    <TextView
+        android:id="@+id/lblQtd"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:text="@string/txv_qtd"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/txvLabel"
+        app:layout_constraintEnd_toStartOf="@+id/edtQtd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblCodigo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
