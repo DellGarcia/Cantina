@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private double total;
 
-    private ArrayList<> items;
+    private ArrayList<Item> items;
     private String[] lanches = {
             "Cachorro Quente",
             "X-Salada",
